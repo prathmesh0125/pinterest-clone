@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const colors =require("colors")
+const colors = require("colors");
 const plm = require("passport-local-mongoose");
 
 mongoose.connect("mongodb://127.0.0.1:27017/PinterestClone").then(() => {
@@ -13,10 +13,10 @@ const userSchema = mongoose.Schema({
     unique: true,
   },
   password: {
-    type: String
+    type: String,
   },
-  dp:{
-   type:String,
+  dp: {
+    type: String,
   },
   posts: [
     {

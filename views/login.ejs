@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="content">
-      <!--pinterest logo-->
-      <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
-      <p class="header">Login to see more</p>
-<form action="/login" method="post">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <!--pinterest logo-->
+        <img
+          src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png"
+          alt="pin logo"
+          class="img1"
+        />
+        <p class="header">Login to see more</p>
+        <% if (error.length > 0) { %>
+        <p class="error"><%= error %></p>
+        <script>
+          setTimeout(function () {
+            document.querySelector(".error").textContent = "<%= %>";
+          }, 2000);
+        </script>
+        <% } %>
 
-      <input type="text" name="username" placeholder="username" class="detail" />
-      <input type="password" name="password" placeholder="password" class="detail" />
-      <input type="submit" class="btn int" value="Login">
-    </form>
+        <form action="/login" method="post">
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            class="detail"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            class="detail"
+          />
+          <input type="submit" class="btn int" value="Login" />
+        </form>
 
-      <h4>Forgot your password?</h4>
+        <h4>Forgot your password?</h4>
 
-   
-
-      <footer>
-        <p>
-          By continuing, you agree to Pinterest's
-          <b>Terms of Service, Privacy policy.</b>
-        </p>
-        <hr />
-        <a href="/">Not on Pinterest yet? Sign up</a>
-      </footer>
+        <footer>
+          <p>
+            By continuing, you agree to Pinterest's
+            <b>Terms of Service, Privacy policy.</b>
+          </p>
+          <hr />
+          <a href="/">Not on Pinterest yet? Sign up</a>
+        </footer>
+      </div>
     </div>
-  </div>
-
-</body>
+  </body>
 </html>
